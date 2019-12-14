@@ -15,6 +15,6 @@ public abstract class Duck {
 	}
 	
 	public void Fly() {
-		System.out.println("i can fly right now !!");
+		System.out.println("i can fly  right now !!");
 	}
 }
