@@ -2,8 +2,17 @@ package Chapter1;
 
 public abstract class Duck {
 	
-	 FlyBehavior flybehavior;
-	 QuacBehavior quackbehavior;
+	FlyBehavior flybehavior;
+	QuacBehavior quackbehavior;
+	
+	 public void setFlybehavior(FlyBehavior flybehavior) {
+		this.flybehavior = flybehavior;
+	}
+
+	public void setQuackbehavior(QuacBehavior quackbehavior) {
+		this.quackbehavior = quackbehavior;
+	}
+
 	
 	abstract public void display() ;
 	
@@ -19,6 +28,7 @@ public abstract class Duck {
 	public void performQuacking() {
 		quackbehavior.quack();
 	}
+	
 	
 	
 
