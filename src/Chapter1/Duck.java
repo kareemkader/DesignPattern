@@ -13,4 +13,8 @@ public abstract class Duck {
 	public void display() {
 		System.out.println("i'm a standard duck");
 	}
+	
+	public void Fly() {
+		System.out.println("i can fly  right now !!");
+	}
 }
