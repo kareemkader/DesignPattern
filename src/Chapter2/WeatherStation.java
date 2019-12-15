@@ -1,20 +1,30 @@
 package Chapter2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class WeatherStation {
 	private float temp;
 	private float humidity;
 	private float pressure;
 	
-	WeatherData dataListener;
+	private List<Subject> dataListener;
 	
 	
 	
-	public WeatherData getDataListener() {
+	public List<Subject> getDataListener() {
 		return dataListener;
 	}
 	
-	public void setDataListener(WeatherData dataListener) {
+	public void setDataListener(List<Subject> dataListener) {
 		this.dataListener = dataListener;
+	}
+	
+	public void addDataListener(Subject sub) {
+		if(dataListener==null) {
+			dataListener=new ArrayList<Subject>();
+		}
+		dataListener.add(sub);
 	}
 	
 	public float getTemp() {
@@ -23,8 +33,8 @@ public class WeatherStation {
 	public void setTemp(float temp) {
 		this.temp = temp;
 		if(dataListener!=null) {
-			dataListener.setTemp();
-			dataListener.measurmentsChanged();
+			dataListener.forEach(element->{element.setTemp();
+			element.notifying();});
 		}
 	}
 	public float getHumidity() {
@@ -33,18 +43,19 @@ public class WeatherStation {
 	public void setHumidity(float humidity) {
 		this.humidity = humidity;
 		if(dataListener!=null) {
-			dataListener.setHumidity();
-			dataListener.measurmentsChanged();
+			dataListener.forEach(element->{element.setHumidity();
+			element.notifying();});
 		}
-	}
+		}
+	
 	public float getPressure() {
 		return pressure;
 	}
 	public void setPressure(float pressure) {
 		this.pressure = pressure;
 		if(dataListener!=null) {
-			dataListener.setPressure();
-			dataListener.measurmentsChanged();
+			dataListener.forEach(element->{element.setPressure();
+			element.notifying();});
 		}	}
 	
 	

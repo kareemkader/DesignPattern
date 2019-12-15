@@ -1,16 +1,23 @@
 package Chapter2;
 
+import java.util.List;
+
 public abstract class Display {
 	private float temp;
 	private float pressure;
 	private float humidity;
-
-	public void update (float temp,float pressure,float humidity) {
-		setHumidity(humidity);
-		setPressure(pressure);
-		setTemp(temp);
-	}
 	
+	Subject weatherdata;
+	
+	
+	
+	
+	public Subject getWeatherdata() {
+		return weatherdata;
+	}
+	public void setWeatherdata(Subject weatherdata) {
+		this.weatherdata = weatherdata;
+	}
 	public float getTemp() {
 		return temp;
 	}

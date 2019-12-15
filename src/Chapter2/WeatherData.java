@@ -1,27 +1,27 @@
 package Chapter2;
 
-public class WeatherData {
+import java.util.ArrayList;
+import java.util.List;
+
+public class WeatherData implements Subject{
 	private float temp;
 	private float humidity;
 	private float pressure;
 	WeatherStation station;
-	Display currentConditionsDisplay,statisticsDisplay,forecastDisplay;
+	List<Observer> observers;
 	
-	public WeatherData(WeatherStation station,Display current,Display statistics,Display forecast) {
+	public WeatherData(WeatherStation station) {
 		this.station=station;
-		currentConditionsDisplay=current;
-		statisticsDisplay=statistics;
-		forecastDisplay=forecast;
+		
 	}
 	
 	public void measurmentsChanged() {
 		float temp=getTemp();
 		float humidity=getHumidity();
 		float pressure =getPressure();
+		observers.forEach(element->element.update());
 		
-		currentConditionsDisplay.update(temp, humidity, pressure);
-		statisticsDisplay.update(temp, humidity, pressure);
-		forecastDisplay.update(temp, humidity, pressure);
+		
 	}
 
 	public float getTemp() {
@@ -58,6 +58,26 @@ public class WeatherData {
 //		currentConditionsDisplay.setPressure(pressure);
 //		forecastDisplay.setPressure(pressure);
 //		statisticsDisplay.setPressure(pressure);
+	}
+
+	@Override
+	public void notifying() {
+		this.measurmentsChanged();	
+	}
+
+	@Override
+	public void addObserver(Observer ob) {
+		if(observers==null) {
+			observers=new ArrayList<>();
+		}
+		observers.add(ob);
+		
+	}
+
+	@Override
+	public void removeObserver(Observer ob) {
+		if(observers!=null&&observers.contains(ob))observers.remove(ob);
+		
 	}
 	
 }

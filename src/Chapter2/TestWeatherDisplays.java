@@ -3,38 +3,33 @@ package Chapter2;
 public class TestWeatherDisplays {
 
 	public static void main(String[] args) {
+		
 		WeatherStation station=new WeatherStation();
-		Display current=new currentConditionsDisplay();
+		Subject weatherData=new WeatherData(station);
 		
-		Display statistics=new statisticsDisplay();
-		Display forecast=new forecastDisplay(); 
-		WeatherData weatherdata=new WeatherData(station,current,statistics,forecast);
+		station.setHumidity(10);
+		station.setPressure(20);
+		station.setTemp(30);
 		
-		station.setDataListener(weatherdata);
 		
-		station.setHumidity(5);
-		station.setPressure(10);
-		station.setTemp(20);
+		Observer current=new currentConditionsDisplay();
+		Observer statistics=new statisticsDisplay();
+		Observer forecast=new forecastDisplay(); 
 		
-		weatherdata.setHumidity();
-		weatherdata.setPressure();
-		weatherdata.setTemp();
+		weatherData.addObserver(forecast);
+		weatherData.addObserver(statistics);
+		weatherData.addObserver(current);
 		
-		current.display();
-		statistics.display();
-		forecast.display();
+		station.setHumidity(50);
 		
-		station.setPressure(100);
-		System.out.println("\n");
-		current.display();
-		statistics.display();
-		forecast.display();
 		
+	
 		
 		
 		
 		
 		
 	}
+	
 
 }
