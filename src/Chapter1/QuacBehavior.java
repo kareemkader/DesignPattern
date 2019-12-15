@@ -1,5 +1,5 @@
 package Chapter1;
 
-public interface Quackable {
+public interface QuacBehavior {
 	public void quack();
 }

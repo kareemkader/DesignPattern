@@ -1,11 +1,14 @@
 package Chapter1;
 
-public class RubberDuck extends Duck implements Quackable{
-
+public class RubberDuck extends Duck {
+	public RubberDuck() {
+		flybehavior=new NoFlying();
+		quackbehavior=new Mute();	}
 	@Override
-	public void quack() {
+	public void display() {
 		// TODO Auto-generated method stub
-		System.out.println("plastic quacking");
+		System.out.println("i'm a rubber duck");
 	}
+
 	
 }
