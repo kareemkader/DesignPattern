@@ -1,33 +1,25 @@
 package Chapter2;
 import java.util.*;
-public class WeatherData implements Subject {
-	private float temp;
-	private float humidity;
-	private float pressure;
-	private List<Observer> observers;
+public class WeatherData extends DataCenters implements Subject {
 	
-	public WeatherData() {
-
-		this.observers=new ArrayList<Observer>();
-		
-	}
+	
 
 	@Override
 	public void addObserver(Observer o) {
-		this.observers.add(o);
+		this.getObservers().add(o);
 	
 		
 	}
 
 	@Override
 	public void removeObserver(Observer o) {
-		int index=observers.indexOf(o);
-		this.observers.remove(index);
+		int index=this.getObservers().indexOf(o);
+		this.getObservers().remove(index);
 	}
 
 	@Override
 	public void notifyObserver() {
-		observers.forEach(element->element.update(temp, humidity, pressure));		
+		this.getObservers().forEach(element->element.update(this));		
 	}
 	
 	public void measurementChanged() {
@@ -35,22 +27,14 @@ public class WeatherData implements Subject {
 	}
 	
 	public void changeInMeasurment(float t,float p,float h) {
-		this.humidity=h;
-		this.pressure=p;
-		this.temp=t;
+		
+		setHumidity(h);
+		setPressure(p);
+		setTemp(t);
+		
 		measurementChanged();
 	}
 	
-	public float getTemp() {
-		return temp;
-	}
-
-	public float getHumidity() {
-		return humidity;
-	}
-
-	public float getPressure() {
-		return pressure;
-	}
+	
 
 }

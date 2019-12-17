@@ -12,10 +12,10 @@ public class currentConditionsDisplay implements Observer{
 	}
 	
 	@Override
-	public void update(float a, float b, float c) {
-		this.temp=a;
-		this.humidity=b;
-		this.pressure=c;
+	public void update(DataCenters mod) {
+		this.temp=mod.getTemp();
+		this.humidity=mod.getHumidity();
+		this.pressure=mod.getPressure();
 		display();
 		
 	}
@@ -25,6 +25,7 @@ public class currentConditionsDisplay implements Observer{
 				+ "is %s and the pressure is %s",temp,humidity,pressure);
 	}
 
+	
 	
 	
 	
