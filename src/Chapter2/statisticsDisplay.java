@@ -1,6 +1,4 @@
-package Chapter2.screens;
-
-import Chapter2.Display;
+package Chapter2;
 
 public class statisticsDisplay extends Display{
 
