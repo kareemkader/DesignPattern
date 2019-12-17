@@ -1,6 +1,6 @@
 package Chapter2;
 import java.util.*;
-public class WeatherData implements Subject {
+public class WeatherData extends Observable{
 	private float temp;
 	private float humidity;
 	private float pressure;
@@ -12,26 +12,11 @@ public class WeatherData implements Subject {
 		
 	}
 
-	@Override
-	public void addObserver(Observer o) {
-		this.observers.add(o);
 	
-		
-	}
-
-	@Override
-	public void removeObserver(Observer o) {
-		int index=observers.indexOf(o);
-		this.observers.remove(index);
-	}
-
-	@Override
-	public void notifyObserver() {
-		observers.forEach(element->element.update(temp, humidity, pressure));		
-	}
 	
 	public void measurementChanged() {
-		this.notifyObserver();
+		setChanged();
+		notifyObservers();
 	}
 	
 	public void changeInMeasurment(float t,float p,float h) {
