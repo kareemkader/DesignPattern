@@ -4,11 +4,11 @@ public class WeatherData {
 	private float temp;
 	private float humidity;
 	private float pressure;
-	WeatherStation station;
+//	WeatherStation station;
 	Display currentConditionsDisplay,statisticsDisplay,forecastDisplay;
 	
-	public WeatherData(WeatherStation station,Display current,Display statistics,Display forecast) {
-		this.station=station;
+	public WeatherData(Display current,Display statistics,Display forecast) {
+//		this.station=station;
 		currentConditionsDisplay=current;
 		statisticsDisplay=statistics;
 		forecastDisplay=forecast;
@@ -29,10 +29,10 @@ public class WeatherData {
 	}
 
 	public void setTemp() {
-		this.temp = station.getTemp();
-//		currentConditionsDisplay.setTemp(temp);
-//		forecastDisplay.setTemp(temp);
-//		statisticsDisplay.setTemp(temp);
+//		this.temp = station.getTemp();
+		currentConditionsDisplay.setTemp(temp);
+		forecastDisplay.setTemp(temp);
+		statisticsDisplay.setTemp(temp);
 	}
 
 	public float getHumidity() {
@@ -40,11 +40,11 @@ public class WeatherData {
 	}
 
 	public void setHumidity() {
-		this.humidity = station.getHumidity();
+//		this.humidity = station.getHumidity();
 
-//		currentConditionsDisplay.setHumidity(humidity);
-//		forecastDisplay.setHumidity(humidity);
-//		statisticsDisplay.setHumidity(humidity);
+		currentConditionsDisplay.setHumidity(humidity);
+		forecastDisplay.setHumidity(humidity);
+		statisticsDisplay.setHumidity(humidity);
 		
 	}
 
@@ -53,11 +53,11 @@ public class WeatherData {
 	}
 
 	public void setPressure() {
-		this.pressure = station.getPressure();
+//		this.pressure = station.getPressure();
 
-//		currentConditionsDisplay.setPressure(pressure);
-//		forecastDisplay.setPressure(pressure);
-//		statisticsDisplay.setPressure(pressure);
+		currentConditionsDisplay.setPressure(pressure);
+		forecastDisplay.setPressure(pressure);
+		statisticsDisplay.setPressure(pressure);
 	}
 	
 }

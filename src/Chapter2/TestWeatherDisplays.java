@@ -1,5 +1,9 @@
 package Chapter2;
 
+import Chapter2.screens.currentConditionsDisplay;
+import Chapter2.screens.forecastDisplay;
+import Chapter2.screens.statisticsDisplay;
+
 public class TestWeatherDisplays {
 
 	public static void main(String[] args) {
@@ -8,7 +12,7 @@ public class TestWeatherDisplays {
 		
 		Display statistics=new statisticsDisplay();
 		Display forecast=new forecastDisplay(); 
-		WeatherData weatherdata=new WeatherData(station,current,statistics,forecast);
+		WeatherData weatherdata=new WeatherData(current,statistics,forecast);
 		
 		station.setDataListener(weatherdata);
 		

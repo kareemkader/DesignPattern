@@ -1,4 +1,6 @@
-package Chapter2;
+package Chapter2.screens;
+
+import Chapter2.Display;
 
 public class forecastDisplay extends Display{
 
