@@ -35,6 +35,11 @@ public class Beverage{
 		return description;
 	}
 
+	public void changeStateOfTopic(String name,boolean state){
+		Topic topic =additions.get(name);
+		if(state)topic.enableState();
+		else {topic.disableState();};
+	}
 
 
 // 	public void setMilk(){

@@ -6,5 +6,10 @@ public class cofeShopTest{
 		Topic milk=new Milk();
 		housebland.addNewTopic("milk",milk);
 		System.out.println(housebland.cost());
+		housebland.changeStateOfTopic("milk",false);
+		System.out.println(housebland.cost());
+
+		housebland.changeStateOfTopic("milk",true);
+		System.out.println(housebland.cost());
 	}
 }
