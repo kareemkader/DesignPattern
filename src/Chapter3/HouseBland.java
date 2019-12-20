@@ -3,13 +3,12 @@ package Chapter3;
 public class HouseBland extends Beverage {
 
 	public HouseBland(){
-		setDescription("this HouseBland coffe !!");
+		description="HouseBland";
 	}
 
-	public float cost(	){
+	public double cost(	){
 
-	return 2+super.cost();
-			
-			}
+	return 1.2;
 
+}
 }
