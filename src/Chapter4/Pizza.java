@@ -1,7 +1,7 @@
 package Chapter4;
 
 public abstract class Pizza{
-	String type ;
+	String type;
 	public void prepare(){
 		System.out.printf("preparing the %s pizza \n",type);
 

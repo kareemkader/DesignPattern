@@ -1,16 +1,24 @@
 package Chapter4;
 
-public class PizzaStore{
-	SimplePizzaFactory factory;
-	public PizzaStore(SimplePizzaFactory factory){
-		this.factory=factory;
-	}
+public abstract class PizzaStore{
+	
+	
 	public Pizza orderPizza(String type){
-		Pizza pizza=factory.createPizza(type);
+		Pizza pizza;
+
+		pizza=createPizza(type);
+		
+		/*
+		those methods dirr from style to another
+		so we need make them flixiable to be changeable 
+		with requirments.
+		*/
+		
 		pizza.prepare();
 		pizza.bake();
 		pizza.cut();
 		pizza.box();
 		return pizza;
 	}
+	public abstract Pizza createPizza(String type);
 }
