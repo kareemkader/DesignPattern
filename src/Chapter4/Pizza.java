@@ -2,11 +2,13 @@ package Chapter4;
 
 public abstract class Pizza{
 	String type;
-	public void prepare(){
-		System.out.printf("preparing the %s pizza \n",type);
-
-	}
-
+	Dough dough;
+    Sauce sauce;
+	Veggies veggies[];
+	Cheese cheese;
+	Pepperoni pepperoni;
+	Clams clam;
+	public abstract void prepare(); //this is the Factory Method pattern now !!
 	public void cut(){
 		System.out.printf("cutting the %s pizza \n",type);
 	}

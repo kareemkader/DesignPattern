@@ -6,15 +6,17 @@ public class NYPizzaStore extends PizzaStore{
 	}
 	public Pizza createPizza(String type){
 		Pizza pizza;
+		PizzaIngredientFactory ingredientFactory =
+						new NYPizzaIngredientFactory();
 		switch(type){
 			case "cheese":
-				 pizza=new CheesePizza();
+				 pizza=new CheesePizza(ingredientFactory);
 				break;
 			case "classic":
-				pizza=new ClassicPizza();
+				pizza=new ClassicPizza(ingredientFactory);
 				break;
 			case "calm":
-				pizza=new CalmPizza();
+				pizza=new CalmPizza(ingredientFactory);
 				break;
 			default:
 				System.out.println("this type is not valid ");
