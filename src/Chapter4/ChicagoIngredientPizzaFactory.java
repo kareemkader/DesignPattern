@@ -1,6 +1,6 @@
 package Chapter4;
 
-public class ChicagoPizzaIngredientFactory extends PizzaIngredientFactory{
+public class ChicagoIngredientFactory extends PizzaIngredientFactory{
 
 	public Dough createDough(){
 		return new ThickCrustDough();
