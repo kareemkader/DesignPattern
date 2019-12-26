@@ -1,7 +1,7 @@
 package Chapter5;
 
 public class ChocolateBoiler{
-	private static ChocolateBoiler uniqueInstance;
+	private static volatile ChocolateBoiler uniqueInstance;
 	private boolean empty;
 	private boolean boiled;
 
@@ -10,9 +10,13 @@ public class ChocolateBoiler{
 		boiled=false;
 	}
 
-	public static synchronized ChocolateBoiler getInstatnce(){
+	public static ChocolateBoiler getInstatnce(){
 		if(uniqueInstance==null){
+			synchronized(ChocolateBoiler.class){
+				if(uniqueInstance==null){
 			uniqueInstance=new ChocolateBoiler();
+				}
+			}
 		}
 		return uniqueInstance;
 	}
