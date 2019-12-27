@@ -10,24 +10,26 @@ public class RemoteControlTest{
 	LightOffCommand lightOff=new LightOffCommand(light);
 	BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
 	System.out.println("choose on or off");
-	try{
-		String order=reader.readLine();
-		switch(order){
-		case "on":
-		control.setCommand(lightOn);
-		control.buttonWasPressed();
-		break;
+	// try{
+	// 	String order=reader.readLine();
+	// 	switch(order){
+	// 	case "on":
+	// 	control.setCommand(lightOn);
+	// 	control.buttonWasPressed();
+	// 	break;
 
-		case "off":
-		control.setCommand(lightOff);
-		control.buttonWasPressed();
-		break;
-	}
-	}
-	catch(Exception e){
-		e.printStackTrace();
-	}
+	// 	case "off":
+	// 	control.setCommand(lightOff);
+	// 	control.buttonWasPressed();
+	// 	break;
+	// }
+	// }
+	// catch(Exception e){
+	// 	e.printStackTrace();
+	// }
 	
-	
+	control.setCommand(lightOn);
+	control.setCommand(lightOff);
+	control.buttonWasPressed();
 }
 }
