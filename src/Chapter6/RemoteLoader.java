@@ -21,6 +21,7 @@ public class RemoteLoader{
 		Command stereoOff=new StereoOffCommand(stereo);
 
 		//now let's attches our commands to remote control
+		//[Loading Command objects]
 		remote.setCommand(0,doorOn,doorOff);
 		remote.setCommand(1,lightOn,lightOff);
 		remote.setCommand(2,stereoOn,stereoOff);
@@ -30,10 +31,17 @@ public class RemoteLoader{
 		System.out.println(remote);
 		remote.onButtonWasPushed(0);
 		remote.offButtonWasPushed(0);
+
+		System.out.println(remote);
+
+		remote.undoing();
+
 		remote.onButtonWasPushed(1);
 		remote.offButtonWasPushed(1);
 		remote.onButtonWasPushed(2);
 		remote.offButtonWasPushed(2);
+
+
 
 	}
 }
