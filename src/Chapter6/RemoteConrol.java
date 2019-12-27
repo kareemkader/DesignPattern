@@ -5,8 +5,13 @@ public class RemoteConrol{
 	Command[] offCommands;
 
 	public RemoteConrol(){
-		onCommands=new Command[3];
-		offCommands=new Command[3];
+		onCommands=new Command[7];
+		offCommands=new Command[7];
+		NoCommand noCommand=new NoCommand();
+		for(int i=0;i<7;i++){
+			onCommands[i]=noCommand;
+			offCommands[i]=noCommand;
+		}
 		}
 
 		public void setCommand(int slot,Command onCommand,Command offCommand){
