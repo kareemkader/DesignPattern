@@ -1,19 +1,21 @@
 package Chapter6;
+import java.util.*;
 
 public class RemoteControl{
 	Command[] onCommands;
 	Command[] offCommands;
-	Command undoCommand;
+	Stack<Command> undoCommand;
 	NoCommand noCommand;
 	public RemoteControl(){
 		onCommands=new Command[7];
 		offCommands=new Command[7];
+		undoCommand=new Stack<>();
 		noCommand=new NoCommand();
 		for(int i=0;i<7;i++){
 			onCommands[i]=noCommand;
 			offCommands[i]=noCommand;
 		}
-		undoCommand=noCommand;
+		undoCommand.push(noCommand);
 		}
 
 		public void setCommand(int slot,Command onCommand,Command offCommand){
@@ -23,17 +25,17 @@ public class RemoteControl{
 
 		public void onButtonWasPushed(int slot){
 			onCommands[slot].execute();
-			undoCommand=onCommands[slot];
+			undoCommand.push(onCommands[slot]);
 		}
 
 		public void offButtonWasPushed(int slot){
 		
 			offCommands[slot].execute();
-			undoCommand=offCommands[slot];
+			undoCommand.push(offCommands[slot]);
 		}
 
 		public void undoing(){
-			undoCommand.undo();
+			undoCommand.pop().undo();
 		}
 
 		public String toString(){
@@ -43,7 +45,8 @@ public class RemoteControl{
 				buffer.append("[slot "+ i + "] " + onCommands[i].getClass().getName()
 + " "+ offCommands[i].getClass().getName() + "\n");
 			}
-			buffer.append("[undo] "+undoCommand.getClass().getName());
+			buffer.append("[undo] "+undoCommand.pop().getClass().getName()+"\n \n");
+			undoCommand.forEach(element->buffer.append("undo OBject: "+element.getClass().getName()));
 			return buffer.toString();
 		}
 }

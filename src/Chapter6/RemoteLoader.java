@@ -65,12 +65,15 @@ public class RemoteLoader{
 		remote.onButtonWasPushed(3);
 		remote.offButtonWasPushed(3);
 		remote.undoing();
-		
+		System.out.println(remote);
 		System.out.println("\n \n \n the party Starts now ");
 		remote.onButtonWasPushed(4);
 		System.out.println("\n \n the End of the party");
 		remote.offButtonWasPushed(4);
 
-
+		remote.undoing();
+		System.out.println(remote);
+		remote.undoing();
+		System.out.println(remote);
 	}
 }
