@@ -9,12 +9,15 @@ public class RemoteLoader{
 		GarageDoor door=new GarageDoor();
 		Light light=new Light();
 		Stereo stereo=new Stereo();
-
+		CeilingFan fan=new CeilingFan();
 		//creating commands for devieces we will start with on commands
 		Command doorOn=new GarageDoorUpCommand(door);
 		Command lightOn=new LightOnCommand(light);
 		Command stereoOn=new StereoOnCommand(stereo);
 
+		Command fanHigh=new CeilingFanHighCommand(fan);
+		Command fanLow=new CeilingFanLowCommand(fan);
+		
 		//creating commands for devieces [off commands]
 		Command doorOff=new GarageDoorDownCommand(door);
 		Command lightOff=new LightOffCommand(light);
@@ -25,7 +28,8 @@ public class RemoteLoader{
 		remote.setCommand(0,doorOn,doorOff);
 		remote.setCommand(1,lightOn,lightOff);
 		remote.setCommand(2,stereoOn,stereoOff);
-
+			//test undo on The Ceiling Fan
+		remote.setCommand(3,fanHigh,fanLow);
 
 		//now we set all configuration right let's start to try to play with some button pushes some of them 
 		System.out.println(remote);
@@ -41,6 +45,12 @@ public class RemoteLoader{
 		remote.onButtonWasPushed(2);
 		remote.offButtonWasPushed(2);
 
+		//push some putton to test undo on Ceiling Fan Class
+
+		remote.onButtonWasPushed(3);
+		remote.offButtonWasPushed(3);
+		remote.undoing();
+		
 
 
 	}

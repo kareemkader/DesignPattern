@@ -4,11 +4,11 @@ public class RemoteControl{
 	Command[] onCommands;
 	Command[] offCommands;
 	Command undoCommand;
-
+	NoCommand noCommand;
 	public RemoteControl(){
 		onCommands=new Command[7];
 		offCommands=new Command[7];
-		NoCommand noCommand=new NoCommand();
+		noCommand=new NoCommand();
 		for(int i=0;i<7;i++){
 			onCommands[i]=noCommand;
 			offCommands[i]=noCommand;
