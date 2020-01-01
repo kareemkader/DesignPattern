@@ -1,28 +1,17 @@
 package Chapter8;
-public class Tea{
+public class Tea extends Beverage{
 	
 
-	public void boilWater(){
-		System.out.println("the water is boil");
-	}
+	
 
-	public void steepTeaBag(){
+	public void brew(){
 		System.out.println("Steeping the Tea");
 	}
 
-	public void pourInCup(){
-		System.out.println("pouring into cup");
-	}
-
-	public void addLimon(){
+	public void addCondiments(){
 		System.out.println("adding limon ");
 	}
+
 	
-	public void prepareRecipe(){
-		boilWater();
-		steepTeaBag();
-		pourInCup();
-		addLimon();
-	}
 
 }

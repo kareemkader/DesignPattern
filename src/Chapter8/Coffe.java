@@ -1,24 +1,15 @@
 package Chapter8;
-public class Coffe{
+public class Coffe extends Beverage{
 	
 
-	public void boilWater(){
-		System.out.println("the water is boil");
-	}
-	public void brewCoffe(){
+	
+	public void brew(){
 		System.out.println("Dripping coffe through filter");
 	}
-	public void pourInCup(){
-		System.out.println("pouring into cup");
-	}
-	public void addSugarAndMilk(){
+	
+	public void addCondiments(){
 		System.out.println("adding sugar and milk ");
 	}
 
-	public void prepareRecipe(){
-		boilWater();
-		brewCoffe();
-		pourInCup();
-		addSugarAndMilk();
-	}
+	
 }
