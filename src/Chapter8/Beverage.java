@@ -11,10 +11,18 @@ public abstract class Beverage{
 
 	public abstract void addCondiments();
 	public abstract void brew();
-	public void prepareRecipe(){
+	/*
+		this is the hook method so subclasses can now change the algorithm behavoir by implement its own conditional behavoir 
+	*/
+	public boolean customerWantsCondiments(){
+		return true ;
+	}
+	public final void prepareRecipe(){
 		boilWater();
 		brew();
 		pourInCup();
-		addCondiments();
+		if(customerWantsCondiments()){
+			addCondiments();
+		}
 	}
 }
