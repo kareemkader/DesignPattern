@@ -8,8 +8,8 @@ public class BreakFastMenu{
 		addItem("pizza","more faty",10,false);
 	}
 
-	public List<MenuItem> getItemList(){
-		return items;
+	public Iterator getIterator(){
+		return new BreakFastIterator(items);
 	}
 
 	public void addItem(String name,String descreption,int cost,boolean vegeterian){

@@ -6,14 +6,24 @@ public class Waitress{
 		BreakFastMenu bfMenu=new BreakFastMenu();
 		DinnerMenu dMenu=new DinnerMenu();
 		//try to get itemList for each of them
-		List<MenuItem> bfList=bfMenu.getItemList();
-		MenuItem[] dList=dMenu.getItemList();
+		Iterator bfList=bfMenu.getIterator();
+		Iterator dList=dMenu.getIterator();
 		//start iterating over each collection to get items of each menu
-		for (int i=0;i<bfList.size();i++) {
-			System.out.println(bfList.get(i));
+		// for (int i=0;i<bfList.size();i++) {
+		// 	System.out.println(bfList.get(i));
+		// }
+		// for (int i=0;i<dList.length;i++ ) {
+		// 	System.out.println(dList[i]);
+		// }
+
+		while(bfList.hasNext()){
+			MenuItem item=(MenuItem) bfList.next();
+			System.out.println(item);
 		}
-		for (int i=0;i<dList.length;i++ ) {
-			System.out.println(dList[i]);
+
+		while(dList.hasNext()){
+			MenuItem item=(MenuItem) dList.next();
+			System.out.println(item);
 		}
 
 	}
