@@ -22,7 +22,4 @@ public class BreakFastIterator implements Iterator{
 		position++;
 		return item;
 	}
-	public void remove(){
-		throw new UnsupportedOperationException();
-	}
 }
