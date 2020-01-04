@@ -1,4 +1,6 @@
 package Chapter9;
+import java.util.*;
+
 public class DinnerMenuIterator implements Iterator{
 	private MenuItem[] items;
 	private int position=0;
