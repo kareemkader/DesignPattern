@@ -1,7 +1,8 @@
 package Chapter9;
 import java.util.*;
+import java.util.Iterator;
 public class DinnerMenu{
-	private MenuItem[] items;
+	public MenuItem[] items;
 	private static final int MAXSIZE=6;
 	private int numeberOfItem=0;
 
