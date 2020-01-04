@@ -1,6 +1,5 @@
 package Chapter9;
 import java.util.*;
-import java.util.Iterator;
 public class Waitress{
 	BreakFastMenu bfMenu;
 	DinnerMenu dMenu;
@@ -15,8 +14,6 @@ public class Waitress{
 		printMenu(bfIterator);
 		System.out.println("Menu\n------\nDiner");
 		printMenu(dIterator);
-		dIterator.remove();
-		System.out.println(Arrays.toString(dMenu.items));
 	}
 	private void printMenu(Iterator iterator){
 		while(iterator.hasNext()){
@@ -24,5 +21,4 @@ public class Waitress{
 			System.out.println(item);
 		}
 	}
-
 }
