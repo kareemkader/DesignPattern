@@ -1,6 +1,7 @@
 package Chapter9;
 import java.util.*;
-public class BreakFastMenu{
+import java.util.Iterator;
+public class BreakFastMenu implements Menu{
 	private List<MenuItem> items;
 	public BreakFastMenu(){
 		items=new ArrayList<>();
@@ -9,7 +10,7 @@ public class BreakFastMenu{
 	}
 
 	public Iterator getIterator(){
-		return new BreakFastIterator(items);
+		return items.iterator();
 	}
 
 	public void addItem(String name,String descreption,int cost,boolean vegeterian){

@@ -1,9 +1,10 @@
 package Chapter9;
 import java.util.*;
+import java.util.Iterator;
 public class Waitress{
-	BreakFastMenu bfMenu;
-	DinnerMenu dMenu;
-	public Waitress(BreakFastMenu bfMenu,DinnerMenu dMenu){
+	Menu bfMenu;
+	Menu dMenu;
+	public Waitress(Menu bfMenu,Menu dMenu){
 		this.bfMenu=bfMenu;
 		this.dMenu=dMenu;
 	}
