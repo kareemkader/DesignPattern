@@ -20,5 +20,6 @@ public class Waitress{
 			MenuItem item=(MenuItem) iterator.next();
 			System.out.println(item);
 		}
+		iterator.remove();
 	}
 }
