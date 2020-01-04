@@ -23,6 +23,6 @@ public class MenuItem{
 		return vegeterian;
 	}
 	public String toString(){
-		return "name: "+name+"descreption: "+descreption+"cost: "+cost+"vegeterian: "+vegeterian;
+		return "name: "+name+" ||descreption: "+descreption+" ||cost: "+cost+" ||vegeterian: "+vegeterian;
 	}
 }
