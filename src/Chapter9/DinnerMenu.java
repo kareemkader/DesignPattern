@@ -5,7 +5,6 @@ public class DinnerMenu implements Menu{
 	private MenuItem[] items;
 	private static final int MAXSIZE=6;
 	private int numeberOfItem=0;
-	public static final String name="DinnerMenu";
 
 	public DinnerMenu(){
 		items=new MenuItem[MAXSIZE];
