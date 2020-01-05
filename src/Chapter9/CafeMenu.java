@@ -3,6 +3,7 @@ import java.util.*;
 import java.util.Iterator;
 public class CafeMenu implements Menu{
 	private Map<String,MenuItem> items;
+	public static final String name="CafeMenu";
 	public CafeMenu(){
 		items=new Hashtable<>();
 		addItem("cafe normal","delcious",5,true);

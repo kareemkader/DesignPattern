@@ -3,6 +3,7 @@ import java.util.*;
 import java.util.Iterator;
 public class BreakFastMenu implements Menu{
 	private List<MenuItem> items;
+	public static final String name="BreakFastMenu";
 	public BreakFastMenu(){
 		items=new ArrayList<>();
 		addItem("panecake","delcious",5,true);
