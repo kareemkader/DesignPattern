@@ -1,5 +1,5 @@
 package Chapter9;
-public class MenuItem extends MenuComponent{
+public class MenuItem extends MenuItemComponent{
 	
 	private int cost;
 	private boolean vegeterian;

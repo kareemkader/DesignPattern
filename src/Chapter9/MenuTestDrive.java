@@ -1,12 +1,12 @@
 package Chapter9;
 public class MenuTestDrive{
 	public static void main(String[] args) {
-		MenuComponent headMenu=new Menu("All menus","All menus Combined");
-		MenuComponent dinerMenu=new Menu("DINER MENU","Lunch");
-		MenuComponent breakFast=new Menu("Break fast","for break fast");
+		Component headMenu=new Menu("All menus","All menus Combined");
+		Component dinerMenu=new Menu("DINER MENU","Lunch");
+		Component breakFast=new Menu("Break fast","for break fast");
 		// create Menu Item now
-		MenuComponent steak=new MenuItem("meat","meat steak",2,false);
-		MenuComponent pate=new MenuItem("sweet bread","eat it with cafe",5,true);
+		Component steak=new MenuItem("meat","meat steak",2,false);
+		Component pate=new MenuItem("sweet bread","eat it with cafe",5,true);
 		
 		dinerMenu.add(steak);
 		breakFast.add(pate);
