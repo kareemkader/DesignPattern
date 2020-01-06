@@ -1,16 +1,16 @@
 package Chapter9;
 import java.util.*;
-public abstract class MenuComponent implements OperationForMenuComponent{
+public abstract class MenuComponent{
 	 String name;
 	 String description;
 	 
-	 public void add(Component menu){
+	 public void add(MenuComponent menu){
 	 	throw new UnsupportedOperationException();
 	 }
-	 public void remove(Component menu){
+	 public void remove(MenuComponent menu){
 	 	throw new UnsupportedOperationException();
 	 }
-	 public Component getChild(int i){
+	 public MenuComponent getChild(int i){
 	 	throw new UnsupportedOperationException();
 	 }
 	 // the operation functions 
@@ -20,12 +20,12 @@ public abstract class MenuComponent implements OperationForMenuComponent{
 	 public String getDescription(){
 	 	throw new UnsupportedOperationException();
 	 }
-	 // public int getPrice(){
-	 // 	throw new UnsupportedOperationException();
-	 // }
-	 // public boolean isVegetarian(){
-	 // 	throw new UnsupportedOperationException();
-	 // }
+	 public int getPrice(){
+	 	throw new UnsupportedOperationException();
+	 }
+	 public boolean isVegetarian(){
+	 	throw new UnsupportedOperationException();
+	 }
 	 public void print(){
 	 	throw new UnsupportedOperationException();
 	 }

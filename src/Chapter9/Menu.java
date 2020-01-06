@@ -2,7 +2,7 @@ package Chapter9;
 import java.util.Iterator;
 import java.util.*;
 public class Menu extends MenuComponent{
-	List<Component> menuComponents=new ArrayList<>();
+	List<MenuComponent> menuComponents=new ArrayList<>();
 	
 
 	public Menu(String name,String description){
@@ -17,13 +17,13 @@ public class Menu extends MenuComponent{
 	}
 	// the composite functions 
 
-	public void add(Component component){
+	public void add(MenuComponent component){
 		menuComponents.add(component);
 	}
-	public void remove(Component component){
+	public void remove(MenuComponent component){
 		menuComponents.remove(component);
 	}
-	public Component getChild(int i){
+	public MenuComponent getChild(int i){
 		return menuComponents.get(i);
 	}
 	public void print(){
@@ -32,7 +32,7 @@ public class Menu extends MenuComponent{
 		System.out.println("---------------------");
 		Iterator iterator=menuComponents.iterator();
 		while(iterator.hasNext()){
-			Component menuComponent=(Component)iterator.next();
+			MenuComponent menuComponent=(MenuComponent)iterator.next();
 			menuComponent.print();
 		}
 	}
