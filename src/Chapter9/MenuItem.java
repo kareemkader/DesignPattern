@@ -1,28 +1,32 @@
 package Chapter9;
-public class MenuItem{
-	private String name;
+public class MenuItem extends MenuComponent{
+	
 	private int cost;
-	private String descreption;
 	private boolean vegeterian;
 	public MenuItem(String name,String descreption,int cost,boolean vegeterian){
 		this.name=name;
 		this.cost=cost;
 		this.vegeterian=vegeterian;
-		this.descreption=descreption;
+		this.description=descreption;
 	}
 	public String getName(){
 		return name;
 	}
-	public String getDescreption(){
-		return descreption;
+	public String getDescription(){
+		return description;
 	}
-	public int getCost(){
+	public int getPrice(){
 		return cost;
 	}
-	public boolean isVegeterian(){
+	public boolean isVegetarian(){
 		return vegeterian;
 	}
-	public String toString(){
-		return "name: "+name+" ||descreption: "+descreption+" ||cost: "+cost+" ||vegeterian: "+vegeterian;
+	public void print(){
+		System.out.print("" + getName());
+			if (isVegetarian()) {
+		System.out.print("(v)");
+			}	
+		System.out.println(", " + getPrice());
+		System.out.println("    -- " + getDescription());
 	}
 }

@@ -1,10 +1,20 @@
 package Chapter9;
 public class MenuTestDrive{
 	public static void main(String[] args) {
-		BreakFastMenu bfMenu=new BreakFastMenu();
-		DinnerMenu dMenu=new DinnerMenu();
-		CafeMenu cMenu=new CafeMenu();
-		Waitress waitress=new Waitress(bfMenu,dMenu,cMenu);
+		MenuComponent headMenu=new Menu("All menus","All menus Combined");
+		MenuComponent dinerMenu=new Menu("DINER MENU","Lunch");
+		MenuComponent breakFast=new Menu("Break fast","for break fast");
+		// create Menu Item now
+		MenuComponent steak=new MenuItem("meat","meat steak",2,false);
+		MenuComponent pate=new MenuItem("sweet bread","eat it with cafe",5,true);
+		
+		dinerMenu.add(steak);
+		breakFast.add(pate);
+		headMenu.add(dinerMenu);
+		headMenu.add(breakFast);
+
+		Waitress waitress=new Waitress(headMenu);
 		waitress.printMenu();
+
 	}
 }
