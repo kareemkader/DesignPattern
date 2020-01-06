@@ -1,4 +1,5 @@
 package Chapter9;
+import java.util.Iterator;
 import java.util.*;
 public abstract class MenuComponent{
 	 String name;
@@ -27,6 +28,9 @@ public abstract class MenuComponent{
 	 	throw new UnsupportedOperationException();
 	 }
 	 public void print(){
+	 	throw new UnsupportedOperationException();
+	 }
+	 public Iterator createIterator(){
 	 	throw new UnsupportedOperationException();
 	 }
 }

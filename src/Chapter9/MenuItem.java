@@ -1,4 +1,5 @@
 package Chapter9;
+import  java.util.Iterator;
 public class MenuItem extends MenuComponent{
 	
 	private int cost;
@@ -28,5 +29,8 @@ public class MenuItem extends MenuComponent{
 			}	
 		System.out.println(", " + getPrice());
 		System.out.println("    -- " + getDescription());
+	}
+	public Iterator createIterator(){
+		return new NullIterator();
 	}
 }

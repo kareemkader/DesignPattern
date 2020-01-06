@@ -15,6 +15,8 @@ public class MenuTestDrive{
 
 		Waitress waitress=new Waitress(headMenu);
 		waitress.printMenu();
+		System.out.println("\n\n\n");
+		waitress.printVegetarianMenu();
 
 	}
 }
