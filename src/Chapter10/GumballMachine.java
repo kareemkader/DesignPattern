@@ -1,6 +1,6 @@
 package Chapter10;
 public class GumballMachine{
-	State soldOut,sold,noQuarter,hasQuarter;
+	State soldOut,sold,noQuarter,hasQuarter,winner;
 	int count;
 
 	State currentState;
