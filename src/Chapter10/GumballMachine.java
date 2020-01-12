@@ -2,10 +2,12 @@ package Chapter10;
 public class GumballMachine{
 	State soldOut,sold,noQuarter,hasQuarter,winner;
 	int count;
+	String location;
 
 	State currentState;
 
-	public GumballMachine(int count){
+	public GumballMachine(int count,String location){
+		this.location=location;
 		sold=new Sold(this);
 		soldOut=new SoldOut(this);
 		noQuarter=new NoQuarter(this);
@@ -29,6 +31,14 @@ public class GumballMachine{
 		currentState.dispense();
 	}
 
+	public int getCount(){
+		return count;
+	}
+
+	public State getState(){
+		return currentState;
+	}
+
 	public void setState(State state){
 		currentState=state;
 	}
@@ -38,6 +48,10 @@ public class GumballMachine{
 		if(count!=0){
 			--count;
 		}
+	}
+
+	public String getLocation(){
+		return location;
 	}
 
 	

@@ -21,4 +21,8 @@ public class NoQuarter implements State {
 	public void dispense(){
 		System.out.println("unvalid operation");
 	}
+
+	public String toString(){
+		return "NoQuarter";
+	}
 }

@@ -20,4 +20,8 @@ public class SoldOut implements State{
 	public void dispense(){
 		System.out.println("unvlaid operation");
 	}
+
+	public String toString(){
+		return "SoldOut";
+	}
 }

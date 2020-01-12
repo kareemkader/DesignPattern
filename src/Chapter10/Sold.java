@@ -26,4 +26,9 @@ public class Sold implements State{
 			gumball.setState(gumball.soldOut);
 		}
 	}
+
+
+	public String toString(){
+		return "Sold";
+	}
 }
